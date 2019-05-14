@@ -1,0 +1,51 @@
+import java.util.Scanner;
+/**
+  *This program will store the details of the movie actor (ie, the stars) considered by the actor agent. 
+  * The program will allow the user to manually record the actor through the console and then print these
+  * details back to the screen.
+  * 
+  * @author 
+  */
+public class ReadActor {
+    /**Method for reading and validating */
+    public static Actor readActor(Actor data,Scanner in) {
+        String name;//Actor's name
+        int membershipid;//Actor's Membership ID
+        int revenue;//Actor's Revenue
+        
+        System.out.println("-Enter Actor Data-");
+        /**User input and creating the Actor's name */
+        System.out.print("Enter Actor's name is:");
+        name = in.nextLine();
+        data.setName(name);
+        /**User input and creating the Actor's Membership ID */
+        System.out.print("Enter Actor's Membership ID:");
+        membershipid = in.nextInt();
+        data.setMembershipid(membershipid);
+        /**User input and creating the Actor's Revenue */
+        do {
+            System.out.print("Enter Actor's Revenue:");
+            revenue = in.nextInt();
+            if( revenue < 0){
+                System.out.println("Re-Enter");
+            }
+            }while(revenue < 0);
+            data.setRevenue(revenue);
+
+            return data;
+    }
+    
+    /** */        
+    public static void main(String[] args) {
+        
+        Scanner sc = new Scanner(System.in);
+        Actor data = new Actor("" ,0 ,0);
+        
+        data = readActor(data,sc);//assigns result to data
+        
+        System.out.println("-You Entered-");
+        System.out.println(data);//displays data using println
+
+    }
+}
+    
