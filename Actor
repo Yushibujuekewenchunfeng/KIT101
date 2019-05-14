@@ -1,0 +1,54 @@
+/**
+ * Representing a new data type
+ * @author 
+ */
+public class Actor {
+    private String name;//variable declarations,Actor's name
+    private int membershipID;//variable declarations,Actor's membershipID
+    private int revenue;//variable declarations,Actor's revenue
+    /**Creates a new Actor...*/
+    public Actor(String name,int membershipID,int revenue) {
+        this.name = name;//variable declarations,Actor's name
+        this.membershipID = membershipID;//variable declarations,Actor's membershipID
+        this.revenue = revenue;//variable declarations,Actor's revenue
+    }
+    /**Returns the Actor's name.*/
+    public String getName() {
+        return name;
+    }
+    /**Sets the Actor's name.*/
+    public void setName(String actorName) {
+        name = actorName;
+    }
+    /**Returns the Actor's membership ID.*/
+    public int getMembershipid() {
+        return membershipID;
+    }
+    /**Sets the Actor's membership ID.*/
+    public void setMembershipid(int actorID) {
+        membershipID = actorID;
+    }
+    /**Returns the Actor's revenue.*/
+    public int getRevenue() {
+        return revenue;
+    }
+    /**Sets the Actor's revenue.*/
+    public void setRevenue(int money) {
+        revenue = money;
+    }
+    /**Returns a String representation of this Actor.*/
+    public String toString() {
+        return name + "(member " + "#" + membershipID + ") " + "$" + revenue + "M " + judge(getRevenue());
+    }
+    /**Returns a String to judge the number of Actor's revenue */
+    public String judge(int revenue) {
+        String answer = "";
+        if (revenue < 5) {
+            answer = "Sharknado only";
+        }else if (revenue > 50) {
+            answer = "A-list";
+        }
+        return answer;
+    }
+}
+    
