@@ -1,0 +1,9 @@
+/**
+ * KIT101 1.2PP Hello World
+ * @author 
+ */
+public class HelloWorld {
+    public static void main(String[] args) {
+        System.out.println("Hello, World!");
+    }
+}
